@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-zinc-100 font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.04) 0%, transparent 40%);
+  }
+
+  /* Custom Glow Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #09090b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphic Card */
+  .glass-card {
+    background: rgba(18, 18, 21, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .glass-card-hover:hover {
+    background: rgba(22, 22, 26, 0.75);
+    border-color: rgba(139, 92, 246, 0.25);
+    box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.08);
+  }
+
+  /* Premium Glassmorphic Inputs */
+  .glass-input {
+    background: rgba(28, 28, 33, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+  }
+  
+  .glass-input:focus {
+    background: rgba(28, 28, 33, 0.8);
+    border-color: #8b5cf6;
+    box-shadow: 0 0 15px 1px rgba(139, 92, 246, 0.15);
+    outline: none;
+  }
+
+  /* Text Gradient Accent */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-indigo-300 to-cyan-400 font-display;
+  }
+  
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-500 font-display;
+  }
+
+  /* Neon Glowing Accents */
+  .glow-purple {
+    position: relative;
+  }
+  .glow-purple::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(8px);
+    pointer-events: none;
+  }
+}
+
+/* Recharts grid line custom overrides */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Custom visual pulse anims */
+@keyframes grid-glow {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.25; }
+}
+
+.grid-glow-layer {
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-glow 8s ease-in-out infinite;
+}
