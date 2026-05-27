@@ -1,4 +1,4 @@
-const API_BASE = 'https://snaplink-url-shortener-aa6k.onrender.com/api';
+const API_BASE = 'https://snaplink-backend-6fum.onrender.com';
 
 export const apiClient = async (endpoint, options = {}) => {
   const token = localStorage.getItem('snaplink_token');
