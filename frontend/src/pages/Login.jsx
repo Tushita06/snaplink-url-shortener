@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Link as LinkIcon, Lock, Mail, ArrowRight } from 'lucide-react';
+import { Link as LinkIcon, Lock, Mail, ArrowRight, Eye, EyeOff } from 'lucide-react';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -113,11 +113,16 @@ const Login = () => {
     <button
       type="button"
       onClick={() => setShowPassword(!showPassword)}
-      className="absolute inset-y-0 right-0 pr-4 flex items-center text-stone-400 hover:text-white"
+      className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-stone-400 hover:text-stone-200 transition-colors"
     >
-      {showPassword ? "🙈" : "👁"}
+      {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
     </button>
 
+  </div>
+  <div className="flex justify-end mt-2">
+    <Link to="/forgot-password" className="text-xs font-semibold text-violet-400 hover:text-violet-300 transition-colors">
+      Forgot password?
+    </Link>
   </div>
 </div>
             {/* Submit Button */}
