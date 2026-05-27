@@ -219,7 +219,7 @@ const Dashboard = () => {
               onClick={logout}
               className="flex items-center gap-1.5 py-2 px-3.5 rounded-xl text-xs font-bold text-stone-400 hover:text-white border border-stone-800 hover:border-stone-700 bg-stone-900/40 hover:bg-stone-800/40 transition-all duration-200"
             >
-              <LogOut className="w-3.5 h-3.5 text-stone-400" />
+              <LogOut className="w-3.5 h-3.5 text-dark" />
               Sign Out
             </button>
           </div>
@@ -245,7 +245,7 @@ const Dashboard = () => {
           {/* Card 1: Total Links */}
           <div className="glass-card p-5 rounded-2xl border-stone-800/80 shadow-md">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] tracking-widest font-extrabold uppercase text-stone-500 font-display">
+              <span className="text-[10px] tracking-widest font-extrabold uppercase text-primary font-display">
                 Total Links
               </span>
               <div className="p-1.5 rounded-lg bg-primary/10 text-primary border border-primary/25">
@@ -267,7 +267,7 @@ const Dashboard = () => {
           {/* Card 2: Total Clicks */}
           <div className="glass-card p-5 rounded-2xl border-stone-800/80 shadow-md">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] tracking-widest font-extrabold uppercase text-stone-500 font-display">
+              <span className="text-[10px] tracking-widest font-extrabold uppercase text-primary font-display">
                 Total Clicks
               </span>
               <div className="p-1.5 rounded-lg bg-accent/10 text-accent border border-accent/25">
@@ -289,7 +289,7 @@ const Dashboard = () => {
           {/* Card 3: Active Links */}
           <div className="glass-card p-5 rounded-2xl border-stone-800/80 shadow-md">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] tracking-widest font-extrabold uppercase text-stone-500 font-display">
+              <span className="text-[10px] tracking-widest font-extrabold uppercase text-primary font-display">
                 Link Health
               </span>
               <div className="p-1.5 rounded-lg bg-primary/10 text-primary border border-primary/25">
@@ -311,7 +311,7 @@ const Dashboard = () => {
           {/* Card 4: Most Active URL */}
           <div className="glass-card p-5 rounded-2xl border-stone-800/80 shadow-md">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] tracking-widest font-extrabold uppercase text-stone-500 font-display">
+              <span className="text-[10px] tracking-widest font-extrabold uppercase text-primary font-display">
                 Top Performer
               </span>
               <div className="p-1.5 rounded-lg bg-accent/10 text-accent border border-accent/25">
@@ -356,7 +356,7 @@ const Dashboard = () => {
               
               {/* Destination URL */}
               <div className="md:col-span-1">
-                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-stone-400 mb-1.5 font-display select-none">
+                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-dark mb-1.5 font-display select-none">
                   Destination URL
                 </label>
                 <input
@@ -371,7 +371,7 @@ const Dashboard = () => {
 
               {/* Custom Alias */}
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-stone-400 mb-1.5 font-display select-none">
+                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-dark mb-1.5 font-display select-none">
                   Custom Alias (Optional)
                 </label>
                 <input
@@ -385,7 +385,7 @@ const Dashboard = () => {
 
               {/* Expiry Date */}
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-stone-400 mb-1.5 font-display select-none">
+                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-dark mb-1.5 font-display select-none">
                   Link Expiry Date (Optional)
                 </label>
                 <div className="relative">
@@ -428,7 +428,7 @@ const Dashboard = () => {
           <div className="glass-card p-6 rounded-3xl border-stone-800/80 shadow-2xl lg:col-span-2">
             <div className="flex items-center justify-between mb-4 select-none">
               <div>
-                <h3 className="text-xs font-extrabold uppercase tracking-wider text-stone-400 font-display">
+                <h3 className="text-xs font-extrabold uppercase tracking-wider text-dark font-display">
                   Daily click traffic
                 </h3>
                 <p className="text-[10px] text-stone-500 mt-0.5">Click actions counted over the past 7 days</p>
@@ -487,7 +487,7 @@ const Dashboard = () => {
 
           {/* Recent visit logs List */}
           <div className="glass-card p-6 rounded-3xl border-stone-800/80 shadow-2xl">
-            <h3 className="text-xs font-extrabold uppercase tracking-wider text-stone-400 mb-4 font-display flex items-center gap-1.5">
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-dark mb-4 font-display flex items-center gap-1.5">
               <Activity className="w-4 h-4 text-primary" />
               Live Activity feed
             </h3>
