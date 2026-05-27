@@ -137,7 +137,7 @@ const LinkTable = ({
             </div>
           ) : (
             <table className="min-w-full divide-y divide-stone-800/80">
-              <thead className="bg-stone-950/40 text-[10px] uppercase tracking-wider font-extrabold text-stone-400 select-none border-b border-stone-800/50">
+              <thead className="bg-stone-950/40 text-[10px] uppercase tracking-wider font-extrabold text-text select-none border-b border-stone-800/50">
                 <tr>
                   <th scope="col" className="px-6 py-4 text-left">Link Details</th>
                   <th scope="col" className="px-6 py-4 text-left">Short URL</th>
@@ -162,28 +162,28 @@ const LinkTable = ({
                               type="text"
                               value={editUrl}
                               onChange={(e) => setEditUrl(e.target.value)}
-                              className="block w-full px-3 py-1.5 border rounded-lg glass-input text-white text-xs"
+                              className="block w-full px-3 py-1.5 border rounded-lg glass-input text-text text-xs"
                               placeholder="Edit original url"
                             />
                             <div className="flex gap-2 items-center">
-                              <label className="text-[10px] text-stone-500 font-extrabold uppercase">
+                              <label className="text-[10px] text-text font-extrabold uppercase">
                                 Expiry Date:
                               </label>
                               <input
                                 type="date"
                                 value={editExpiry}
                                 onChange={(e) => setEditExpiry(e.target.value)}
-                                className="px-2 py-0.5 border rounded-lg glass-input text-white text-[10px]"
+                                className="px-2 py-0.5 border rounded-lg glass-input text-text text-[10px]"
                               />
                             </div>
                           </div>
                         ) : (
                           <div className="flex flex-col space-y-1">
-                            <span className="font-bold text-stone-200 truncate font-display tracking-wide">
+                            <span className="font-bold text-text truncate font-display tracking-wide">
                               {url.title || 'Untitled Link'}
                             </span>
                             <div className="flex items-center gap-1">
-                              <span className="text-xs text-stone-500 truncate max-w-[200px] sm:max-w-[260px] select-all font-mono leading-tight">
+                              <span className="text-xs text-text truncate max-w-[200px] sm:max-w-[260px] select-all font-mono leading-tight">
                                 {url.originalUrl}
                               </span>
                               <a 
@@ -195,7 +195,7 @@ const LinkTable = ({
                                 <ExternalLink className="w-3.5 h-3.5" />
                               </a>
                             </div>
-                            <span className="text-[10px] text-stone-500">
+                            <span className="text-[10px] text-text">
                               Created: {formatDate(url.createdAt)}
                             </span>
                           </div>

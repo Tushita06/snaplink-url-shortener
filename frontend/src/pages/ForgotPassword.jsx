@@ -261,7 +261,7 @@ const ForgotPassword = () => {
                       value={digit}
                       onChange={(e) => handleOtpChange(i, e.target.value)}
                       onKeyDown={(e) => handleOtpKeyDown(i, e)}
-                      className="w-11 h-12 text-center text-lg font-bold rounded-xl border glass-input text-dark focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 focus:outline-none transition-all"
+                      className="w-11 h-12 text-center text-lg font-bold rounded-xl border glass-input text-text focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 focus:outline-none transition-all"
                     />
                   ))}
                 </div>
@@ -308,7 +308,7 @@ const ForgotPassword = () => {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="block w-full pl-11 pr-12 py-3 border rounded-xl glass-input text-dark text-sm"
+                    className="block w-full pl-11 pr-12 py-3 border rounded-xl glass-input text-text text-sm"
                     placeholder="Min. 6 characters"
                   />
                   <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-stone-400 hover:text-stone-200 transition-colors">
@@ -330,7 +330,7 @@ const ForgotPassword = () => {
                     required
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="block w-full pl-11 pr-12 py-3 border rounded-xl glass-input text-dark text-sm"
+                    className="block w-full pl-11 pr-12 py-3 border rounded-xl glass-input text-text text-sm"
                     placeholder="Re-enter password"
                   />
                   <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-stone-400 hover:text-stone-200 transition-colors">

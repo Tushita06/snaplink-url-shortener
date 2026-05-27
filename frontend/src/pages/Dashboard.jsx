@@ -212,14 +212,14 @@ const Dashboard = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-xs font-semibold text-stone-400 hidden sm:inline select-none">
-              Signed in as: <span className="text-stone-200">{user?.name || user?.email}</span>
+            <span className="text-xs font-semibold text-primary hidden sm:inline select-none">
+              Signed in as: <span className="text-text">{user?.name || user?.email}</span>
             </span>
             <button
               onClick={logout}
-              className="flex items-center gap-1.5 py-2 px-3.5 rounded-xl text-xs font-bold text-stone-400 hover:text-white border border-stone-800 hover:border-stone-700 bg-stone-900/40 hover:bg-stone-800/40 transition-all duration-200"
+              className="flex items-center gap-1.5 py-2 px-3.5 rounded-xl text-xs font-bold text-text hover:text-white border border-stone-800 hover:border-stone-700 bg-stone-900/40 hover:bg-stone-800/40 transition-all duration-200"
             >
-              <LogOut className="w-3.5 h-3.5 text-dark" />
+              <LogOut className="w-3.5 h-3.5 text-text" />
               Sign Out
             </button>
           </div>
@@ -356,7 +356,7 @@ const Dashboard = () => {
               
               {/* Destination URL */}
               <div className="md:col-span-1">
-                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-dark mb-1.5 font-display select-none">
+                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-text mb-1.5 font-display select-none">
                   Destination URL
                 </label>
                 <input
@@ -371,7 +371,7 @@ const Dashboard = () => {
 
               {/* Custom Alias */}
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-dark mb-1.5 font-display select-none">
+                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-text mb-1.5 font-display select-none">
                   Custom Alias (Optional)
                 </label>
                 <input
@@ -385,7 +385,7 @@ const Dashboard = () => {
 
               {/* Expiry Date */}
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-dark mb-1.5 font-display select-none">
+                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-text mb-1.5 font-display select-none">
                   Link Expiry Date (Optional)
                 </label>
                 <div className="relative">
@@ -428,7 +428,7 @@ const Dashboard = () => {
           <div className="glass-card p-6 rounded-3xl border-stone-800/80 shadow-2xl lg:col-span-2">
             <div className="flex items-center justify-between mb-4 select-none">
               <div>
-                <h3 className="text-xs font-extrabold uppercase tracking-wider text-dark font-display">
+                <h3 className="text-xs font-extrabold uppercase tracking-wider text-text font-display">
                   Daily click traffic
                 </h3>
                 <p className="text-[10px] text-stone-500 mt-0.5">Click actions counted over the past 7 days</p>
@@ -487,7 +487,7 @@ const Dashboard = () => {
 
           {/* Recent visit logs List */}
           <div className="glass-card p-6 rounded-3xl border-stone-800/80 shadow-2xl">
-            <h3 className="text-xs font-extrabold uppercase tracking-wider text-dark mb-4 font-display flex items-center gap-1.5">
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-text mb-4 font-display flex items-center gap-1.5">
               <Activity className="w-4 h-4 text-primary" />
               Live Activity feed
             </h3>
