@@ -2,16 +2,11 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const connStr = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/snaplink';
-    console.log(`Connecting to MongoDB...`);
-    
-    const conn = await mongoose.connect(connStr, {
-      serverSelectionTimeoutMS: 5000,
-    });
-    
-    console.log(`MongoDB Connected successfully: ${conn.connection.host}/${conn.connection.name}`);
+    await mongoose.connect(process.env.MONGO_URI);
+
+    console.log('MongoDB Connected Successfully');
   } catch (error) {
-    console.error(`MongoDB Connection Error: ${error.message}`);
+    console.error(error);
     process.exit(1);
   }
 };
