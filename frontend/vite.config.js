@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://snaplink-backend-6fum.onrender.com',
         changeOrigin: true,
       },
     },
