@@ -30,10 +30,9 @@ const LinkTable = ({
   };
 
   // Helper to construct fully qualified short links
-  const getAbsoluteShortUrl = (code) => {
-    const backendPort = 5000;
-    return `${window.location.hostname}:${backendPort}/${code}`;
-  };
+ const getAbsoluteShortUrl = (code) => {
+  return `snaplink-backend-6fum.onrender.com/${code}`;
+};
 
   const handleCopy = async (code, id) => {
     const fullUrl = `${window.location.protocol}//${getAbsoluteShortUrl(code)}`;
