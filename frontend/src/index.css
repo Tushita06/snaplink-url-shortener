@@ -1,105 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700;8..60,800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-background text-zinc-100 font-sans antialiased overflow-x-hidden;
-    background-image: 
-      radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 40%),
-      radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.04) 0%, transparent 40%);
+  :root {
+    color-scheme: light;
   }
 
-  /* Custom Glow Scrollbar */
+  body {
+    @apply bg-background text-text font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(circle at 15% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 36%),
+      radial-gradient(circle at 85% 80%, rgba(15, 118, 110, 0.06) 0%, transparent 32%);
+  }
+
+  .bg-violet-600 {
+    background-color: #0F766E !important;
+  }
+
+  .hover\:bg-violet-500:hover {
+    background-color: #115E59 !important;
+  }
+
+  .bg-violet-500\/10 {
+    background-color: rgba(15, 118, 110, 0.1) !important;
+  }
+
+  .border-violet-500\/20 {
+    border-color: rgba(15, 118, 110, 0.2) !important;
+  }
+
+  .text-violet-400,
+  .text-violet-300 {
+    color: #0F766E !important;
+  }
+
+  .bg-violet-600\/5 {
+    background-color: rgba(15, 118, 110, 0.05) !important;
+  }
+
+  .bg-sky-600\/5 {
+    background-color: rgba(245, 158, 11, 0.05) !important;
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #09090b;
+    background: #0a0a0f;
   }
   ::-webkit-scrollbar-thumb {
-    background: #27272a;
+    background: #2e2a3d;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #3f3f46;
+    background: #3d3550;
   }
 }
 
 @layer components {
-  /* Premium Glassmorphic Card */
   .glass-card {
-    background: rgba(18, 18, 21, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #FFFFFF;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid #E7E5E4;
+    box-shadow: 0 10px 30px 0 rgba(28, 25, 23, 0.08);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #1C1917;
   }
   
   .glass-card-hover:hover {
-    background: rgba(22, 22, 26, 0.75);
-    border-color: rgba(139, 92, 246, 0.25);
-    box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.08);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(15, 118, 110, 0.16);
+    box-shadow: 0 10px 30px 0 rgba(15, 118, 110, 0.08);
   }
 
-  /* Premium Glassmorphic Inputs */
   .glass-input {
-    background: rgba(28, 28, 33, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.25s ease;
+    background: #FFFFFF;
+    border: 1px solid #E7E5E4;
+    color: #1C1917;
+    transition: all 0.2s ease;
+  }
+
+  .glass-card .text-white {
+    color: #1C1917 !important;
+  }
+
+  .glass-card .text-stone-200,
+  .glass-card .text-stone-300 {
+    color: #78716C !important;
+  }
+
+  .glass-input.text-white {
+    color: #1C1917 !important;
   }
   
+  .glass-input::placeholder {
+    color: rgba(120, 113, 108, 0.7);
+  }
+
   .glass-input:focus {
-    background: rgba(28, 28, 33, 0.8);
-    border-color: #8b5cf6;
-    box-shadow: 0 0 15px 1px rgba(139, 92, 246, 0.15);
+    background: #FFFFFF;
+    border-color: #0F766E;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
     outline: none;
   }
 
-  /* Text Gradient Accent */
+  .text-secondary {
+    color: #78716C;
+  }
+
+  .text-main {
+    color: #1C1917;
+  }
+
+  .text-stone-400 {
+    color: #78716C !important;
+  }
+
+  .text-stone-500 {
+    color: #78716C !important;
+  }
+
+  .border-stone-800,
+  .border-stone-900 {
+    border-color: #E7E5E4 !important;
+  }
+
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-indigo-300 to-cyan-400 font-display;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-300 via-fuchsia-200 to-amber-200 font-display;
   }
   
   .text-gradient-purple {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-500 font-display;
-  }
-
-  /* Neon Glowing Accents */
-  .glow-purple {
-    position: relative;
-  }
-  .glow-purple::after {
-    content: '';
-    position: absolute;
-    inset: -5px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
-    z-index: -1;
-    filter: blur(8px);
-    pointer-events: none;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-amber-300 font-display;
   }
 }
 
-/* Recharts grid line custom overrides */
 .recharts-cartesian-grid-horizontal line,
 .recharts-cartesian-grid-vertical line {
   stroke: rgba(255, 255, 255, 0.05) !important;
 }
 
-/* Custom visual pulse anims */
 @keyframes grid-glow {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.25; }
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.2; }
 }
 
 .grid-glow-layer {
   background-image: 
-    linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: grid-glow 8s ease-in-out infinite;
+    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: grid-glow 10s ease-in-out infinite;
 }

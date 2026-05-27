@@ -7,6 +7,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPassword,setShowPassword] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -16,7 +17,7 @@ const Login = () => {
 
     try {
       setIsSubmitting(true);
-      const success = await login(email, password);
+      const success = await login(email.trim().toLowerCase(), password);
       if (success) {
         navigate('/dashboard');
       }
@@ -31,26 +32,26 @@ const Login = () => {
     <div className="min-h-screen bg-background flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Decorative Gradient Glow Orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-violet-600/5 blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-cyan-600/5 blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-sky-600/5 blur-[120px] pointer-events-none"></div>
       
       {/* Dynamic Grid Background Layer */}
       <div className="absolute inset-0 grid-glow-layer pointer-events-none opacity-40"></div>
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative z-10">
         <Link to="/" className="flex items-center justify-center gap-2.5 group">
-          <div className="p-2 rounded-xl bg-violet-500/10 border border-violet-500/20 group-hover:border-violet-500/40 transition-colors shadow-glow-primary duration-300">
-            <LinkIcon className="h-6 w-6 text-violet-400 group-hover:rotate-12 transition-transform duration-300" />
+          <div className="p-2 rounded-xl bg-primary/10 border border-primary/20 group-hover:border-primary/40 transition-colors shadow-glow-primary duration-300">
+            <LinkIcon className="h-6 w-6 text-primary group-hover:rotate-12 transition-transform duration-300" />
           </div>
-          <span className="text-2xl font-extrabold tracking-tight text-white font-display">
-            Snap<span className="text-violet-400 font-light">Link</span>
+          <span className="text-2xl font-extrabold tracking-tight text-text font-display">
+            Snap<span className="text-primary font-light">Link</span>
           </span>
         </Link>
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-white font-display">
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-text font-display">
           Welcome back
         </h2>
-        <p className="mt-2 text-center text-sm text-zinc-400 font-medium">
+        <p className="mt-2 text-center text-sm text-stone-400 font-medium">
           Or{' '}
-          <Link to="/register" className="font-semibold text-violet-400 hover:text-violet-300 transition-colors duration-200">
+          <Link to="/register" className="font-semibold text-primary hover:text-primary-hover transition-colors duration-200">
             create a free account
           </Link>
         </p>
@@ -61,12 +62,12 @@ const Login = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-zinc-300 tracking-wide">
+              <label htmlFor="email" className="block text-sm font-semibold text-stone-300 tracking-wide">
                 Email Address
               </label>
               <div className="mt-1.5 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-zinc-500" />
+                  <Mail className="h-5 w-5 text-stone-500" />
                 </div>
                 <input
                   id="email"
@@ -76,35 +77,49 @@ const Login = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full pl-11 pr-4 py-3 border rounded-xl glass-input text-white text-sm"
+                  className="block w-full pl-11 pr-4 py-3 border rounded-xl glass-input text-text text-sm"
                   placeholder="name@domain.com"
                 />
               </div>
             </div>
 
-            {/* Password Field */}
-            <div>
-              <label htmlFor="password" className="block text-sm font-semibold text-zinc-300 tracking-wide">
-                Password
-              </label>
-              <div className="mt-1.5 relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-zinc-500" />
-                </div>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full pl-11 pr-4 py-3 border rounded-xl glass-input text-white text-sm"
-                  placeholder="••••••••"
-                />
-              </div>
-            </div>
+           {/* Password Field */}
+<div>
+  <label
+    htmlFor="password"
+    className="block text-sm font-semibold text-stone-300 tracking-wide"
+  >
+    Password
+  </label>
 
+  <div className="mt-1.5 relative rounded-md shadow-sm">
+
+    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+      <Lock className="h-5 w-5 text-stone-500" />
+    </div>
+
+    <input
+      id="password"
+      name="password"
+      type={showPassword ? "text" : "password"}
+      autoComplete="current-password"
+      required
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      className="block w-full pl-11 pr-14 py-3 border rounded-xl glass-input text-text text-sm"
+      placeholder="••••••••"
+    />
+
+    <button
+      type="button"
+      onClick={() => setShowPassword(!showPassword)}
+      className="absolute inset-y-0 right-0 pr-4 flex items-center text-stone-400 hover:text-white"
+    >
+      {showPassword ? "🙈" : "👁"}
+    </button>
+
+  </div>
+</div>
             {/* Submit Button */}
             <div>
               <button

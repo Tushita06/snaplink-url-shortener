@@ -86,7 +86,7 @@ const LinkTable = ({
         {/* Search */}
         <div className="relative w-full sm:max-w-xs rounded-xl shadow-sm">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-            <Search className="h-4.5 w-4.5 text-zinc-500" />
+            <Search className="h-4.5 w-4.5 text-stone-500" />
           </div>
           <input
             type="text"
@@ -99,7 +99,7 @@ const LinkTable = ({
 
         {/* Filter Dropdown */}
         <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-          <Filter className="w-4 h-4 text-zinc-500" />
+          <Filter className="w-4 h-4 text-stone-500" />
           <select
             value={filterType}
             onChange={(e) => setFilterType(e.target.value)}
@@ -113,23 +113,23 @@ const LinkTable = ({
       </div>
 
       {/* Table Card wrapper */}
-      <div className="glass-card rounded-2xl overflow-hidden border border-zinc-800/80 shadow-2xl">
+      <div className="glass-card rounded-2xl overflow-hidden border border-stone-800/80 shadow-2xl">
         <div className="overflow-x-auto">
           {loading ? (
             <div className="py-20 flex flex-col items-center justify-center space-y-3">
               <div className="w-8 h-8 border-3 border-violet-500/20 border-t-violet-500 rounded-full animate-spin"></div>
-              <p className="text-xs text-zinc-500 font-display animate-pulse uppercase tracking-widest font-semibold">
+              <p className="text-xs text-stone-500 font-display animate-pulse uppercase tracking-widest font-semibold">
                 Refreshing Link Vault...
               </p>
             </div>
           ) : urls.length === 0 ? (
             <div className="py-20 text-center flex flex-col items-center justify-center p-6 space-y-4">
-              <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-2xl">
-                <Search className="w-8 h-8 text-zinc-600" />
+              <div className="p-3 bg-stone-900 border border-stone-800 rounded-2xl">
+                <Search className="w-8 h-8 text-stone-600" />
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-zinc-300 font-display">No Links Found</h3>
-                <p className="text-xs text-zinc-500 mt-1 max-w-[280px] mx-auto leading-relaxed">
+                <h3 className="text-sm font-semibold text-stone-300 font-display">No Links Found</h3>
+                <p className="text-xs text-stone-500 mt-1 max-w-[280px] mx-auto leading-relaxed">
                   {searchTerm 
                     ? "We couldn't find any results matching your search queries. Try redefining filters."
                     : "Your link vault is empty! Shorten your first long URL to kickstart tracking analytics."}
@@ -137,8 +137,8 @@ const LinkTable = ({
               </div>
             </div>
           ) : (
-            <table className="min-w-full divide-y divide-zinc-800/80">
-              <thead className="bg-zinc-950/40 text-[10px] uppercase tracking-wider font-extrabold text-zinc-400 select-none border-b border-zinc-800/50">
+            <table className="min-w-full divide-y divide-stone-800/80">
+              <thead className="bg-stone-950/40 text-[10px] uppercase tracking-wider font-extrabold text-stone-400 select-none border-b border-stone-800/50">
                 <tr>
                   <th scope="col" className="px-6 py-4 text-left">Link Details</th>
                   <th scope="col" className="px-6 py-4 text-left">Short URL</th>
@@ -147,13 +147,13 @@ const LinkTable = ({
                   <th scope="col" className="px-6 py-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-zinc-850/60 bg-transparent text-sm">
+              <tbody className="divide-y divide-stone-800/60 bg-transparent text-sm">
                 {urls.map((url) => {
                   const isEditing = editingId === url._id;
                   const isExpired = url.expiresAt && new Date(url.expiresAt) <= new Date();
 
                   return (
-                    <tr key={url._id} className="hover:bg-zinc-900/20 transition-colors">
+                    <tr key={url._id} className="hover:bg-stone-900/20 transition-colors">
                       
                       {/* Original Link Details */}
                       <td className="px-6 py-4 max-w-xs sm:max-w-sm">
@@ -167,7 +167,7 @@ const LinkTable = ({
                               placeholder="Edit original url"
                             />
                             <div className="flex gap-2 items-center">
-                              <label className="text-[10px] text-zinc-500 font-extrabold uppercase">
+                              <label className="text-[10px] text-stone-500 font-extrabold uppercase">
                                 Expiry Date:
                               </label>
                               <input
@@ -180,23 +180,23 @@ const LinkTable = ({
                           </div>
                         ) : (
                           <div className="flex flex-col space-y-1">
-                            <span className="font-bold text-zinc-200 truncate font-display tracking-wide">
+                            <span className="font-bold text-stone-200 truncate font-display tracking-wide">
                               {url.title || 'Untitled Link'}
                             </span>
                             <div className="flex items-center gap-1">
-                              <span className="text-xs text-zinc-500 truncate max-w-[200px] sm:max-w-[260px] select-all font-mono leading-tight">
+                              <span className="text-xs text-stone-500 truncate max-w-[200px] sm:max-w-[260px] select-all font-mono leading-tight">
                                 {url.originalUrl}
                               </span>
                               <a 
                                 href={url.originalUrl} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="text-zinc-500 hover:text-violet-400 transition-colors"
+                                className="text-stone-500 hover:text-violet-400 transition-colors"
                               >
                                 <ExternalLink className="w-3.5 h-3.5" />
                               </a>
                             </div>
-                            <span className="text-[10px] text-zinc-500">
+                            <span className="text-[10px] text-stone-500">
                               Created: {formatDate(url.createdAt)}
                             </span>
                           </div>
@@ -256,7 +256,7 @@ const LinkTable = ({
                             {/* Copy button */}
                             <button
                               onClick={() => handleCopy(url.shortCode, url._id)}
-                              className="p-2 rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                              className="p-2 rounded-lg hover:bg-stone-800 text-stone-400 hover:text-white transition-colors"
                               title="Copy Short Link"
                             >
                               {copiedId === url._id ? (
@@ -269,7 +269,7 @@ const LinkTable = ({
                             {/* Analytics Panel */}
                             <button
                               onClick={() => onOpenAnalytics(url._id)}
-                              className="p-2 rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                              className="p-2 rounded-lg hover:bg-stone-800 text-stone-400 hover:text-white transition-colors"
                               title="View Detailed Analytics"
                             >
                               <BarChart2 className="w-4 h-4" />
@@ -278,7 +278,7 @@ const LinkTable = ({
                             {/* QR Code */}
                             <button
                               onClick={() => onOpenQr(getAbsoluteShortUrl(url.shortCode), url.title)}
-                              className="p-2 rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                              className="p-2 rounded-lg hover:bg-stone-800 text-stone-400 hover:text-white transition-colors"
                               title="Show QR Code"
                             >
                               <QrCode className="w-4 h-4" />
@@ -287,7 +287,7 @@ const LinkTable = ({
                             {/* Edit Button */}
                             <button
                               onClick={() => startEditing(url)}
-                              className="p-2 rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                              className="p-2 rounded-lg hover:bg-stone-800 text-stone-400 hover:text-white transition-colors"
                               title="Edit Destination Link"
                             >
                               <Edit2 className="w-4 h-4" />
@@ -300,7 +300,7 @@ const LinkTable = ({
                                   onDelete(url._id);
                                 }
                               }}
-                              className="p-2 rounded-lg hover:bg-rose-950/20 text-zinc-400 hover:text-rose-400 transition-colors"
+                              className="p-2 rounded-lg hover:bg-rose-950/20 text-stone-400 hover:text-rose-400 transition-colors"
                               title="Delete Link"
                             >
                               <Trash2 className="w-4 h-4" />

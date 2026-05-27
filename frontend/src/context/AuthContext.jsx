@@ -51,9 +51,10 @@ export const AuthProvider = ({ children }) => {
   const signup = async (name, email, password) => {
     try {
       setLoading(true);
+      const normalizedEmail = email.trim().toLowerCase();
       const data = await apiClient('/auth/signup', {
         method: 'POST',
-        body: { name, email, password }
+        body: { name, email: normalizedEmail, password }
       });
 
       if (data.success) {
@@ -75,9 +76,10 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       setLoading(true);
+      const normalizedEmail = email.trim().toLowerCase();
       const data = await apiClient('/auth/login', {
         method: 'POST',
-        body: { email, password }
+        body: { email: normalizedEmail, password }
       });
 
       if (data.success) {

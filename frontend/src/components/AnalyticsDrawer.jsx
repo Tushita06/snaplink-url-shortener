@@ -34,10 +34,10 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
     const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
     return (
       <div className="w-full">
-        <div className="flex justify-between text-xs font-semibold text-zinc-300 mb-1">
+        <div className="flex justify-between text-xs font-semibold text-stone-300 mb-1">
           <span>{percentage}%</span>
         </div>
-        <div className="w-full bg-zinc-900 rounded-full h-1.5 overflow-hidden border border-zinc-800">
+        <div className="w-full bg-stone-900 rounded-full h-1.5 overflow-hidden border border-stone-800">
           <div 
             className={`h-full rounded-full ${colorClass}`}
             style={{ width: `${percentage}%` }}
@@ -57,20 +57,20 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
 
       <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
         {/* Drawer Panel */}
-        <div className="w-screen max-w-md glass-card border-l border-zinc-800/80 shadow-2xl flex flex-col h-full">
+        <div className="w-screen max-w-md glass-card border-l border-stone-800/80 shadow-2xl flex flex-col h-full">
           
           {/* Drawer Header */}
-          <div className="p-6 border-b border-zinc-800/80 flex items-center justify-between">
+          <div className="p-6 border-b border-stone-800/80 flex items-center justify-between">
             <div>
               <h2 className="text-xl font-bold text-white font-display flex items-center gap-2">
                 <Activity className="w-5 h-5 text-violet-400" />
                 Link Metrics
               </h2>
-              <p className="text-xs text-zinc-400 mt-0.5">Real-time click statistics</p>
+              <p className="text-xs text-stone-400 mt-0.5">Real-time click statistics</p>
             </div>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+              className="p-1.5 rounded-lg hover:bg-stone-800 text-stone-400 hover:text-white transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -81,14 +81,14 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
             {loading ? (
               <div className="h-full flex flex-col items-center justify-center space-y-3">
                 <div className="w-10 h-10 border-4 border-violet-500/20 border-t-violet-500 rounded-full animate-spin"></div>
-                <p className="text-sm text-zinc-400 font-medium font-display animate-pulse uppercase tracking-wider">
+                <p className="text-sm text-stone-400 font-medium font-display animate-pulse uppercase tracking-wider">
                   Loading metrics...
                 </p>
               </div>
             ) : data ? (
               <>
                 {/* Link Summary Card */}
-                <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 space-y-3">
+                <div className="p-4 rounded-xl bg-stone-900/60 border border-stone-800/80 space-y-3">
                   <span className="text-[10px] tracking-widest font-extrabold uppercase text-violet-400 font-display">
                     Destination URL
                   </span>
@@ -101,7 +101,7 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                     {data.url.title || data.url.originalUrl}
                     <ArrowUpRight className="w-4 h-4 flex-shrink-0" />
                   </a>
-                  <div className="flex items-center gap-2 text-xs text-zinc-400 pt-1">
+                  <div className="flex items-center gap-2 text-xs text-stone-400 pt-1">
                     <Calendar className="w-3.5 h-3.5" />
                     <span>Created: {new Date(data.url.createdAt).toLocaleDateString()}</span>
                   </div>
@@ -109,15 +109,15 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
 
                 {/* Main Clicks Stats */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-850 shadow-inner text-center">
+                  <div className="p-4 rounded-xl bg-stone-950/60 border border-stone-800 shadow-inner text-center">
                     <span className="text-2xl font-black text-white font-display">
                       {data.url.clicks}
                     </span>
-                    <p className="text-[10px] text-zinc-500 font-extrabold tracking-wider uppercase mt-1">
+                    <p className="text-[10px] text-stone-500 font-extrabold tracking-wider uppercase mt-1">
                       Total Visits
                     </p>
                   </div>
-                  <div className="p-4 rounded-xl bg-zinc-950/60 border border-zinc-850 shadow-inner text-center">
+                  <div className="p-4 rounded-xl bg-stone-950/60 border border-stone-800 shadow-inner text-center">
                     <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${
                       data.url.expiresAt && new Date(data.url.expiresAt) <= new Date()
                         ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
@@ -125,7 +125,7 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                     }`}>
                       {data.url.expiresAt && new Date(data.url.expiresAt) <= new Date() ? 'Expired' : 'Active'}
                     </span>
-                    <p className="text-[10px] text-zinc-500 font-extrabold tracking-wider uppercase mt-2.5">
+                    <p className="text-[10px] text-stone-500 font-extrabold tracking-wider uppercase mt-2.5">
                       Link Status
                     </p>
                   </div>
@@ -133,12 +133,12 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
 
                 {/* Click Timeline chart */}
                 <div>
-                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-zinc-400 mb-3 font-display">
+                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-stone-400 mb-3 font-display">
                     Timeline (Past 7 Days)
                   </h3>
-                  <div className="h-44 w-full bg-zinc-950/40 border border-zinc-850 p-2 rounded-xl">
+                  <div className="h-44 w-full bg-stone-950/40 border border-stone-800 p-2 rounded-xl">
                     {data.stats.totalClicks === 0 ? (
-                      <div className="h-full flex items-center justify-center text-xs text-zinc-600 font-medium">
+                      <div className="h-full flex items-center justify-center text-xs text-stone-600 font-medium">
                         No recent click events
                       </div>
                     ) : (
@@ -152,16 +152,16 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                           </defs>
                           <XAxis 
                             dataKey="date" 
-                            stroke="#52525b" 
+                            stroke="#57534e" 
                             fontSize={9} 
                             tickLine={false} 
                             tickFormatter={(tick) => tick.substring(8, 10)} // Show only day index
                           />
-                          <YAxis stroke="#52525b" fontSize={9} tickLine={false} />
+                          <YAxis stroke="#57534e" fontSize={9} tickLine={false} />
                           <Tooltip 
                             contentStyle={{ 
-                              background: '#121215', 
-                              border: '1px solid #27272a',
+                              background: '#161d26', 
+                              border: '1px solid #334155',
                               borderRadius: '8px',
                               fontSize: '11px',
                               color: '#fff'
@@ -183,19 +183,19 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
 
                 {/* Device Breakdown */}
                 <div>
-                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-zinc-400 mb-3 font-display flex items-center gap-1.5">
-                    <Monitor className="w-4 h-4 text-zinc-500" />
+                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-stone-400 mb-3 font-display flex items-center gap-1.5">
+                    <Monitor className="w-4 h-4 text-stone-500" />
                     Devices
                   </h3>
                   {data.stats.devices.length === 0 ? (
-                    <p className="text-xs text-zinc-600 italic">No device records yet</p>
+                    <p className="text-xs text-stone-600 italic">No device records yet</p>
                   ) : (
                     <div className="space-y-3.5">
                       {data.stats.devices.map((device, idx) => (
                         <div key={idx} className="space-y-1">
                           <div className="flex justify-between items-center text-xs">
-                            <span className="font-semibold text-zinc-300">{device.name}</span>
-                            <span className="text-zinc-500 font-mono text-[10px]">{device.value} clicks</span>
+                            <span className="font-semibold text-stone-300">{device.name}</span>
+                            <span className="text-stone-500 font-mono text-[10px]">{device.value} clicks</span>
                           </div>
                           {renderProgressBar(device.value, data.stats.totalClicks, 'bg-violet-500')}
                         </div>
@@ -206,21 +206,21 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
 
                 {/* Browser Breakdown */}
                 <div>
-                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-zinc-400 mb-3 font-display flex items-center gap-1.5">
-                    <Compass className="w-4 h-4 text-zinc-500" />
+                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-stone-400 mb-3 font-display flex items-center gap-1.5">
+                    <Compass className="w-4 h-4 text-stone-500" />
                     Browsers
                   </h3>
                   {data.stats.browsers.length === 0 ? (
-                    <p className="text-xs text-zinc-600 italic">No browser records yet</p>
+                    <p className="text-xs text-stone-600 italic">No browser records yet</p>
                   ) : (
                     <div className="space-y-3.5">
                       {data.stats.browsers.map((browser, idx) => (
                         <div key={idx} className="space-y-1">
                           <div className="flex justify-between items-center text-xs">
-                            <span className="font-semibold text-zinc-300">{browser.name}</span>
-                            <span className="text-zinc-500 font-mono text-[10px]">{browser.value} clicks</span>
+                            <span className="font-semibold text-stone-300">{browser.name}</span>
+                            <span className="text-stone-500 font-mono text-[10px]">{browser.value} clicks</span>
                           </div>
-                          {renderProgressBar(browser.value, data.stats.totalClicks, 'bg-cyan-500')}
+                          {renderProgressBar(browser.value, data.stats.totalClicks, 'bg-sky-500')}
                         </div>
                       ))}
                     </div>
@@ -229,19 +229,19 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
 
                 {/* Country Breakdown */}
                 <div>
-                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-zinc-400 mb-3 font-display flex items-center gap-1.5">
-                    <Globe className="w-4 h-4 text-zinc-500" />
+                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-stone-400 mb-3 font-display flex items-center gap-1.5">
+                    <Globe className="w-4 h-4 text-stone-500" />
                     Top Geolocations
                   </h3>
                   {data.stats.countries.length === 0 ? (
-                    <p className="text-xs text-zinc-600 italic">No location records yet</p>
+                    <p className="text-xs text-stone-600 italic">No location records yet</p>
                   ) : (
                     <div className="space-y-3.5">
                       {data.stats.countries.map((country, idx) => (
                         <div key={idx} className="space-y-1">
                           <div className="flex justify-between items-center text-xs">
-                            <span className="font-semibold text-zinc-300">{country.name}</span>
-                            <span className="text-zinc-500 font-mono text-[10px]">{country.value} clicks</span>
+                            <span className="font-semibold text-stone-300">{country.name}</span>
+                            <span className="text-stone-500 font-mono text-[10px]">{country.value} clicks</span>
                           </div>
                           {renderProgressBar(country.value, data.stats.totalClicks, 'bg-emerald-500')}
                         </div>
@@ -252,36 +252,36 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
 
                 {/* Recent click logs feed */}
                 <div>
-                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-zinc-400 mb-3 font-display">
+                  <h3 className="text-xs font-extrabold tracking-wider uppercase text-stone-400 mb-3 font-display">
                     Recent Clicks Log
                   </h3>
                   {data.stats.clickLogs.length === 0 ? (
-                    <p className="text-xs text-zinc-600 italic">No click logs recorded yet</p>
+                    <p className="text-xs text-stone-600 italic">No click logs recorded yet</p>
                   ) : (
-                    <div className="flow-root bg-zinc-950/30 border border-zinc-850 p-2.5 rounded-xl max-h-60 overflow-y-auto scrollbar-thin">
+                    <div className="flow-root bg-stone-950/30 border border-stone-800 p-2.5 rounded-xl max-h-60 overflow-y-auto scrollbar-thin">
                       <ul className="-mb-8">
                         {data.stats.clickLogs.map((log, idx) => (
                           <li key={idx}>
                             <div className="relative pb-8">
                               {idx !== data.stats.clickLogs.length - 1 ? (
-                                <span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-zinc-850" aria-hidden="true"></span>
+                                <span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-stone-800" aria-hidden="true"></span>
                               ) : null}
                               <div className="relative flex space-x-3 items-start">
                                 <div>
-                                  <span className="h-8 w-8 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[10px] font-mono text-violet-400">
+                                  <span className="h-8 w-8 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-[10px] font-mono text-violet-400">
                                     {idx + 1}
                                   </span>
                                 </div>
                                 <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
                                   <div>
-                                    <p className="text-xs font-semibold text-zinc-300">
+                                    <p className="text-xs font-semibold text-stone-300">
                                       {log.browser} ({log.os})
                                     </p>
-                                    <p className="text-[10px] text-zinc-500 mt-0.5">
+                                    <p className="text-[10px] text-stone-500 mt-0.5">
                                       IP: {log.ip} &bull; Geolocation: {log.country}
                                     </p>
                                   </div>
-                                  <div className="text-right text-[10px] whitespace-nowrap text-zinc-500 font-medium">
+                                  <div className="text-right text-[10px] whitespace-nowrap text-stone-500 font-medium">
                                     {new Date(log.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                                   </div>
                                 </div>
@@ -295,7 +295,7 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                 </div>
               </>
             ) : (
-              <p className="text-center text-xs text-zinc-600 italic">Failed to retrieve data</p>
+              <p className="text-center text-xs text-stone-600 italic">Failed to retrieve data</p>
             )}
           </div>
         </div>

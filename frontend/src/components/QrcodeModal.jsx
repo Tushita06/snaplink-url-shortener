@@ -15,7 +15,7 @@ const QrcodeModal = ({ isOpen, onClose, shortUrl, title }) => {
     : `${window.location.protocol}//${shortUrl}`;
 
   // QR Code API Url
-  const qrCodeApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=ffffff&bgcolor=121215&margin=15&data=${encodeURIComponent(absoluteShortUrl)}`;
+  const qrCodeApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=ffffff&bgcolor=161d26&margin=15&data=${encodeURIComponent(absoluteShortUrl)}`;
 
   const handleCopyLink = async () => {
     try {
@@ -66,13 +66,13 @@ const QrcodeModal = ({ isOpen, onClose, shortUrl, title }) => {
       {/* Modal Container */}
       <div className="glass-card rounded-2xl max-w-sm w-full p-6 relative z-10 scale-100 opacity-100 transition-transform duration-300 shadow-glow-primary border-violet-500/20">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-zinc-800 pb-3 mb-4">
+        <div className="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
           <h3 className="text-lg font-bold text-white font-display">
             Generate QR Code
           </h3>
           <button 
             onClick={onClose}
-            className="p-1.5 rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+            className="p-1.5 rounded-lg hover:bg-stone-800 text-stone-400 hover:text-white transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -80,7 +80,7 @@ const QrcodeModal = ({ isOpen, onClose, shortUrl, title }) => {
 
         {/* QR Code Container */}
         <div className="flex flex-col items-center justify-center py-4 space-y-4">
-          <div className="relative p-3 rounded-2xl bg-zinc-900 border border-zinc-800/80 shadow-inner group">
+          <div className="relative p-3 rounded-2xl bg-stone-900 border border-stone-800/80 shadow-inner group">
             {/* Glowing Backdrop behind QR code */}
             <div className="absolute inset-0 bg-violet-600/10 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
             
@@ -92,14 +92,14 @@ const QrcodeModal = ({ isOpen, onClose, shortUrl, title }) => {
           </div>
 
           <div className="text-center">
-            <h4 className="text-sm font-semibold text-zinc-200 truncate max-w-[260px]">
+            <h4 className="text-sm font-semibold text-stone-200 truncate max-w-[260px]">
               {title || 'SnapLink Shortened URL'}
             </h4>
             <a 
               href={absoluteShortUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-zinc-500 hover:text-violet-400 hover:underline mt-1 select-all font-mono inline-block"
+              className="text-xs text-stone-500 hover:text-violet-400 hover:underline mt-1 select-all font-mono inline-block"
             >
               {absoluteShortUrl}
             </a>
@@ -107,10 +107,10 @@ const QrcodeModal = ({ isOpen, onClose, shortUrl, title }) => {
         </div>
 
         {/* Footer Actions */}
-        <div className="grid grid-cols-2 gap-3 mt-4 border-t border-zinc-800 pt-4">
+        <div className="grid grid-cols-2 gap-3 mt-4 border-t border-stone-800 pt-4">
           <button
             onClick={handleCopyLink}
-            className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800 text-zinc-300 transition-all duration-200"
+            className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold border border-stone-800 hover:border-stone-700 hover:bg-stone-800 text-stone-300 transition-all duration-200"
           >
             {isCopied ? (
               <>
@@ -119,7 +119,7 @@ const QrcodeModal = ({ isOpen, onClose, shortUrl, title }) => {
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4 text-zinc-400" />
+                <Copy className="w-4 h-4 text-stone-400" />
                 Copy Link
               </>
             )}

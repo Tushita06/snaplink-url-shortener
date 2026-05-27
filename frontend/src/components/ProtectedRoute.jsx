@@ -16,7 +16,7 @@ const ProtectedRoute = () => {
           <div className="absolute inset-0 border-4 border-violet-500/20 rounded-full"></div>
           <div className="absolute inset-0 border-4 border-t-violet-500 rounded-full animate-spin"></div>
         </div>
-        <p className="mt-4 text-zinc-400 text-sm font-medium tracking-widest animate-pulse font-display uppercase">
+        <p className="mt-4 text-stone-400 text-sm font-medium tracking-widest animate-pulse font-display uppercase">
           Initializing SnapLink...
         </p>
       </div>

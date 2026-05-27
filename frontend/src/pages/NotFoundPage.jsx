@@ -33,11 +33,11 @@ const NotFoundPage = () => {
           <h1 className="text-2xl font-black text-white font-display tracking-tight">
             Short Link Not Found
           </h1>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed font-medium">
+          <p className="text-xs sm:text-sm text-stone-400 mt-3 leading-relaxed font-medium">
             We couldn't locate the shortcut code you requested. The link may have been renamed, deleted, or contains a typographical error.
           </p>
 
-          <div className="mt-8 border-t border-zinc-800/80 pt-6">
+          <div className="mt-8 border-t border-stone-800/80 pt-6">
             <Link
               to="/"
               className="w-full flex justify-center items-center gap-1.5 py-3 px-4 rounded-xl text-xs font-bold text-white bg-violet-600 hover:bg-violet-500 shadow-glow-primary transition-all duration-200"
@@ -48,7 +48,7 @@ const NotFoundPage = () => {
           </div>
         </div>
 
-        <p className="text-[10px] text-zinc-600 font-semibold tracking-wide select-none">
+        <p className="text-[10px] text-stone-600 font-semibold tracking-wide select-none">
           &copy; {new Date().getFullYear()} SnapLink URL Manager. All rights reserved.
         </p>
 

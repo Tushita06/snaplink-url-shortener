@@ -194,32 +194,32 @@ const Dashboard = () => {
     <div className="min-h-screen bg-background relative pb-20">
       {/* Decorative Orbs */}
       <div className="absolute top-0 right-10 w-[500px] h-[500px] rounded-full bg-violet-600/5 blur-[150px] pointer-events-none"></div>
-      <div className="absolute top-1/2 left-10 w-[500px] h-[500px] rounded-full bg-cyan-600/5 blur-[150px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-10 w-[500px] h-[500px] rounded-full bg-sky-600/5 blur-[150px] pointer-events-none"></div>
 
       {/* Grid Overlay */}
       <div className="absolute inset-0 grid-glow-layer pointer-events-none opacity-10"></div>
 
       {/* Dashboard Top Navigation */}
-      <header className="relative z-20 border-b border-zinc-900/60 bg-background/50 backdrop-blur-md">
+      <header className="relative z-20 border-b border-stone-900/60 bg-background/50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-xl bg-violet-500/10 border border-violet-500/20 shadow-glow-primary">
-              <LinkIcon className="h-5 w-5 text-violet-400" />
+            <div className="p-2 rounded-xl bg-primary/10 border border-primary/20 shadow-glow-primary">
+              <LinkIcon className="h-5 w-5 text-primary" />
             </div>
-            <span className="text-xl font-extrabold tracking-tight text-white font-display">
-              Snap<span className="text-violet-400 font-light">Link</span>
+            <span className="text-xl font-extrabold tracking-tight text-text font-display">
+              Snap<span className="text-primary font-light">Link</span>
             </span>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-xs font-semibold text-zinc-400 hidden sm:inline select-none">
-              Signed in as: <span className="text-zinc-200">{user?.name || user?.email}</span>
+            <span className="text-xs font-semibold text-stone-400 hidden sm:inline select-none">
+              Signed in as: <span className="text-stone-200">{user?.name || user?.email}</span>
             </span>
             <button
               onClick={logout}
-              className="flex items-center gap-1.5 py-2 px-3.5 rounded-xl text-xs font-bold text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-700 bg-zinc-900/40 hover:bg-zinc-800/40 transition-all duration-200"
+              className="flex items-center gap-1.5 py-2 px-3.5 rounded-xl text-xs font-bold text-stone-400 hover:text-white border border-stone-800 hover:border-stone-700 bg-stone-900/40 hover:bg-stone-800/40 transition-all duration-200"
             >
-              <LogOut className="w-3.5 h-3.5 text-zinc-400" />
+              <LogOut className="w-3.5 h-3.5 text-stone-400" />
               Sign Out
             </button>
           </div>
@@ -231,10 +231,10 @@ const Dashboard = () => {
         
         {/* Welcome Banner */}
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text font-display">
             Welcome back, {user?.name || 'Explorer'}!
           </h1>
-          <p className="text-xs sm:text-sm text-zinc-400 mt-1">
+          <p className="text-xs sm:text-sm text-stone-400 mt-1">
             Aggregate your metrics, customize code parameters, and handle short links instantly.
           </p>
         </div>
@@ -243,95 +243,95 @@ const Dashboard = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           
           {/* Card 1: Total Links */}
-          <div className="glass-card p-5 rounded-2xl border-zinc-800/80 shadow-md">
+          <div className="glass-card p-5 rounded-2xl border-stone-800/80 shadow-md">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] tracking-widest font-extrabold uppercase text-zinc-500 font-display">
+              <span className="text-[10px] tracking-widest font-extrabold uppercase text-stone-500 font-display">
                 Total Links
               </span>
-              <div className="p-1.5 rounded-lg bg-violet-500/10 text-violet-400 border border-violet-500/25">
+              <div className="p-1.5 rounded-lg bg-primary/10 text-primary border border-primary/25">
                 <LinkIcon className="w-3.5 h-3.5" />
               </div>
             </div>
             <div className="mt-3.5">
               {loadingStats ? (
-                <div className="h-7 w-12 bg-zinc-800 rounded animate-pulse"></div>
+                <div className="h-7 w-12 bg-stone-800 rounded animate-pulse"></div>
               ) : (
-                <span className="text-2xl font-black text-white font-display">
+                <span className="text-2xl font-black text-text font-display">
                   {stats?.totalLinks || 0}
                 </span>
               )}
-              <p className="text-[9px] text-zinc-500 mt-0.5 font-medium">Short urls generated</p>
+              <p className="text-[9px] text-stone-500 mt-0.5 font-medium">Short urls generated</p>
             </div>
           </div>
 
           {/* Card 2: Total Clicks */}
-          <div className="glass-card p-5 rounded-2xl border-zinc-800/80 shadow-md">
+          <div className="glass-card p-5 rounded-2xl border-stone-800/80 shadow-md">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] tracking-widest font-extrabold uppercase text-zinc-500 font-display">
+              <span className="text-[10px] tracking-widest font-extrabold uppercase text-stone-500 font-display">
                 Total Clicks
               </span>
-              <div className="p-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/25">
+              <div className="p-1.5 rounded-lg bg-accent/10 text-accent border border-accent/25">
                 <MousePointerClick className="w-3.5 h-3.5" />
               </div>
             </div>
             <div className="mt-3.5">
               {loadingStats ? (
-                <div className="h-7 w-12 bg-zinc-800 rounded animate-pulse"></div>
+                <div className="h-7 w-12 bg-stone-800 rounded animate-pulse"></div>
               ) : (
-                <span className="text-2xl font-black text-white font-display">
+                <span className="text-2xl font-black text-text font-display">
                   {stats?.totalClicks || 0}
                 </span>
               )}
-              <p className="text-[9px] text-zinc-500 mt-0.5 font-medium">Redirect events logged</p>
+              <p className="text-[9px] text-stone-500 mt-0.5 font-medium">Redirect events logged</p>
             </div>
           </div>
 
           {/* Card 3: Active Links */}
-          <div className="glass-card p-5 rounded-2xl border-zinc-800/80 shadow-md">
+          <div className="glass-card p-5 rounded-2xl border-stone-800/80 shadow-md">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] tracking-widest font-extrabold uppercase text-zinc-500 font-display">
+              <span className="text-[10px] tracking-widest font-extrabold uppercase text-stone-500 font-display">
                 Link Health
               </span>
-              <div className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+              <div className="p-1.5 rounded-lg bg-primary/10 text-primary border border-primary/25">
                 <TrendingUp className="w-3.5 h-3.5" />
               </div>
             </div>
             <div className="mt-3.5">
               {loadingStats ? (
-                <div className="h-7 w-12 bg-zinc-800 rounded animate-pulse"></div>
+                <div className="h-7 w-12 bg-stone-800 rounded animate-pulse"></div>
               ) : (
-                <span className="text-2xl font-black text-white font-display">
+                <span className="text-2xl font-black text-text font-display">
                   {stats?.totalLinks > 0 ? '100%' : '0%'}
                 </span>
               )}
-              <p className="text-[9px] text-zinc-500 mt-0.5 font-medium">Active operational paths</p>
+              <p className="text-[9px] text-stone-500 mt-0.5 font-medium">Active operational paths</p>
             </div>
           </div>
 
           {/* Card 4: Most Active URL */}
-          <div className="glass-card p-5 rounded-2xl border-zinc-800/80 shadow-md">
+          <div className="glass-card p-5 rounded-2xl border-stone-800/80 shadow-md">
             <div className="flex justify-between items-start">
-              <span className="text-[10px] tracking-widest font-extrabold uppercase text-zinc-500 font-display">
+              <span className="text-[10px] tracking-widest font-extrabold uppercase text-stone-500 font-display">
                 Top Performer
               </span>
-              <div className="p-1.5 rounded-lg bg-pink-500/10 text-pink-400 border border-pink-500/25">
+              <div className="p-1.5 rounded-lg bg-accent/10 text-accent border border-accent/25">
                 <Activity className="w-3.5 h-3.5" />
               </div>
             </div>
             <div className="mt-3.5">
               {loadingStats ? (
-                <div className="h-7 w-20 bg-zinc-800 rounded animate-pulse"></div>
+                <div className="h-7 w-20 bg-stone-800 rounded animate-pulse"></div>
               ) : stats?.mostActiveLink ? (
                 <div className="truncate">
-                  <span className="text-sm font-extrabold text-white font-display leading-tight truncate block max-w-[160px]">
+                  <span className="text-sm font-extrabold text-text font-display leading-tight truncate block max-w-[160px]">
                     {stats.mostActiveLink.title || stats.mostActiveLink.shortCode}
                   </span>
-                  <span className="text-[9px] font-mono font-bold text-pink-400 block mt-0.5">
+                  <span className="text-[9px] font-mono font-bold text-accent block mt-0.5">
                     {stats.mostActiveLink.clicks} clicks logged
                   </span>
                 </div>
               ) : (
-                <span className="text-sm font-extrabold text-zinc-500 font-display block py-1 select-none">
+                <span className="text-sm font-extrabold text-stone-500 font-display block py-1 select-none">
                   No clicks yet
                 </span>
               )}
@@ -341,22 +341,22 @@ const Dashboard = () => {
         </div>
 
         {/* Shortener Core Hub Input Panel */}
-        <div className="glass-card p-6 rounded-3xl border-zinc-850 relative overflow-hidden">
+        <div className="glass-card p-6 rounded-3xl border-stone-800 relative overflow-hidden">
           {/* Glowing blur */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-violet-600/10 rounded-full blur-2xl pointer-events-none"></div>
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
           
-          <h2 className="text-base font-extrabold text-white font-display flex items-center gap-2">
-            <Plus className="w-5 h-5 text-violet-400" />
+          <h2 className="text-base font-extrabold text-text font-display flex items-center gap-2">
+            <Plus className="w-5 h-5 text-primary" />
             Shorten a new URL
           </h2>
-          <p className="text-xs text-zinc-400 mt-0.5">Configure target routes, custom aliasing keys, and expiration dates.</p>
+          <p className="text-xs text-stone-400 mt-0.5">Configure target routes, custom aliasing keys, and expiration dates.</p>
 
           <form onSubmit={handleCreateUrl} className="mt-5 space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-end">
               
               {/* Destination URL */}
               <div className="md:col-span-1">
-                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-zinc-400 mb-1.5 font-display select-none">
+                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-stone-400 mb-1.5 font-display select-none">
                   Destination URL
                 </label>
                 <input
@@ -365,13 +365,13 @@ const Dashboard = () => {
                   value={originalUrl}
                   onChange={(e) => setOriginalUrl(e.target.value)}
                   placeholder="e.g. docs.google.com/spreadsheets/d/1..."
-                  className="block w-full px-3.5 py-2.5 border rounded-xl glass-input text-white text-xs"
+                  className="block w-full px-3.5 py-2.5 border rounded-xl glass-input text-text text-xs"
                 />
               </div>
 
               {/* Custom Alias */}
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-zinc-400 mb-1.5 font-display select-none">
+                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-stone-400 mb-1.5 font-display select-none">
                   Custom Alias (Optional)
                 </label>
                 <input
@@ -379,13 +379,13 @@ const Dashboard = () => {
                   value={customAlias}
                   onChange={(e) => setCustomAlias(e.target.value)}
                   placeholder="e.g. promo-spring"
-                  className="block w-full px-3.5 py-2.5 border rounded-xl glass-input text-white text-xs"
+                  className="block w-full px-3.5 py-2.5 border rounded-xl glass-input text-text text-xs"
                 />
               </div>
 
               {/* Expiry Date */}
               <div>
-                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-zinc-400 mb-1.5 font-display select-none">
+                <label className="block text-[10px] uppercase tracking-wider font-extrabold text-stone-400 mb-1.5 font-display select-none">
                   Link Expiry Date (Optional)
                 </label>
                 <div className="relative">
@@ -393,7 +393,7 @@ const Dashboard = () => {
                     type="date"
                     value={expiresAt}
                     onChange={(e) => setExpiresAt(e.target.value)}
-                    className="block w-full px-3.5 py-2.5 border rounded-xl glass-input text-white text-xs select-none cursor-pointer"
+                    className="block w-full px-3.5 py-2.5 border rounded-xl glass-input text-text text-xs select-none cursor-pointer"
                   />
                 </div>
               </div>
@@ -405,7 +405,7 @@ const Dashboard = () => {
               <button
                 type="submit"
                 disabled={isCreating}
-                className="flex items-center gap-1.5 py-2.5 px-6 rounded-xl text-xs font-bold text-white bg-violet-600 hover:bg-violet-500 shadow-glow-primary transition-all duration-200 disabled:opacity-50"
+                className="flex items-center gap-1.5 py-2.5 px-6 rounded-xl text-xs font-bold text-white bg-primary hover:bg-primary-hover shadow-glow-primary transition-all duration-200 disabled:opacity-50"
               >
                 {isCreating ? (
                   <div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
@@ -425,24 +425,24 @@ const Dashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
           {/* Recharts click progression Area Chart */}
-          <div className="glass-card p-6 rounded-3xl border-zinc-800/80 shadow-2xl lg:col-span-2">
+          <div className="glass-card p-6 rounded-3xl border-stone-800/80 shadow-2xl lg:col-span-2">
             <div className="flex items-center justify-between mb-4 select-none">
               <div>
-                <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-400 font-display">
+                <h3 className="text-xs font-extrabold uppercase tracking-wider text-stone-400 font-display">
                   Daily click traffic
                 </h3>
-                <p className="text-[10px] text-zinc-500 mt-0.5">Click actions counted over the past 7 days</p>
+                <p className="text-[10px] text-stone-500 mt-0.5">Click actions counted over the past 7 days</p>
               </div>
-              <TrendingUp className="w-4 h-4 text-violet-400" />
+<TrendingUp className="w-4 h-4 text-primary" />
             </div>
 
-            <div className="h-56 w-full bg-zinc-950/20 border border-zinc-850 p-2 rounded-2xl shadow-inner">
+            <div className="h-56 w-full bg-stone-950/20 border border-stone-800 p-2 rounded-2xl shadow-inner">
               {loadingStats ? (
-                <div className="h-full flex items-center justify-center text-xs text-zinc-500">
+                <div className="h-full flex items-center justify-center text-xs text-stone-500">
                   Calculating daily metrics...
                 </div>
               ) : stats?.timeline.length === 0 ? (
-                <div className="h-full flex items-center justify-center text-xs text-zinc-600 font-medium">
+                <div className="h-full flex items-center justify-center text-xs text-stone-600 font-medium">
                   No clicks registered yet. Share your shortcodes to capture logs.
                 </div>
               ) : (
@@ -456,16 +456,16 @@ const Dashboard = () => {
                     </defs>
                     <XAxis 
                       dataKey="date" 
-                      stroke="#52525b" 
+                      stroke="#57534e" 
                       fontSize={9} 
                       tickLine={false} 
                       tickFormatter={(tick) => tick.substring(8, 10)} // Show only date number
                     />
-                    <YAxis stroke="#52525b" fontSize={9} tickLine={false} />
+                    <YAxis stroke="#57534e" fontSize={9} tickLine={false} />
                     <Tooltip 
                       contentStyle={{ 
-                        background: '#121215', 
-                        border: '1px solid #27272a',
+                        background: '#161d26', 
+                        border: '1px solid #334155',
                         borderRadius: '12px',
                         fontSize: '11px',
                         color: '#fff'
@@ -486,9 +486,9 @@ const Dashboard = () => {
           </div>
 
           {/* Recent visit logs List */}
-          <div className="glass-card p-6 rounded-3xl border-zinc-800/80 shadow-2xl">
-            <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-400 mb-4 font-display flex items-center gap-1.5">
-              <Activity className="w-4 h-4 text-violet-400" />
+          <div className="glass-card p-6 rounded-3xl border-stone-800/80 shadow-2xl">
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-stone-400 mb-4 font-display flex items-center gap-1.5">
+              <Activity className="w-4 h-4 text-primary" />
               Live Activity feed
             </h3>
 
@@ -496,32 +496,32 @@ const Dashboard = () => {
               <div className="space-y-3.5">
                 {[1, 2, 3].map((n) => (
                   <div key={n} className="flex space-x-3 items-start animate-pulse">
-                    <div className="h-6 w-6 rounded-full bg-zinc-800 flex-shrink-0"></div>
+                    <div className="h-6 w-6 rounded-full bg-stone-800 flex-shrink-0"></div>
                     <div className="flex-1 space-y-1.5">
-                      <div className="h-3 bg-zinc-800 rounded w-1/2"></div>
-                      <div className="h-2 bg-zinc-800 rounded w-3/4"></div>
+                      <div className="h-3 bg-stone-800 rounded w-1/2"></div>
+                      <div className="h-2 bg-stone-800 rounded w-3/4"></div>
                     </div>
                   </div>
                 ))}
               </div>
             ) : !stats || stats.recentClicks.length === 0 ? (
               <div className="h-48 flex items-center justify-center text-center p-4">
-                <p className="text-xs text-zinc-600 font-medium max-w-[200px] leading-relaxed select-none">
+                <p className="text-xs text-stone-600 font-medium max-w-[200px] leading-relaxed select-none">
                   Your activity feed is empty. Visit logs appear here in real-time.
                 </p>
               </div>
             ) : (
               <div className="space-y-4 max-h-[224px] overflow-y-auto pr-1 scrollbar-thin">
                 {stats.recentClicks.map((click, index) => (
-                  <div key={index} className="flex gap-3 text-xs leading-normal items-start p-2 rounded-xl bg-zinc-950/20 border border-zinc-850 hover:border-zinc-800/60 transition-all">
-                    <div className="p-1.5 rounded-lg bg-zinc-900 border border-zinc-850 text-violet-400 font-mono text-[9px] font-bold">
+                  <div key={index} className="flex gap-3 text-xs leading-normal items-start p-2 rounded-xl bg-stone-950/20 border border-stone-800 hover:border-stone-800/60 transition-all">
+                    <div className="p-1.5 rounded-lg bg-stone-900 border border-stone-800 text-primary font-mono text-[9px] font-bold">
                       {new Date(click.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="font-bold text-zinc-300 truncate">
+                      <p className="font-bold text-stone-300 truncate">
                         {click.urlId?.title || click.urlId?.shortCode || 'Target Link'}
                       </p>
-                      <p className="text-[9px] text-zinc-500 mt-0.5 truncate">
+                      <p className="text-[9px] text-stone-500 mt-0.5 truncate">
                         Browser: {click.browser} &bull; Country: {click.country}
                       </p>
                     </div>
@@ -536,10 +536,10 @@ const Dashboard = () => {
         {/* Detailed Links Management Data Table */}
         <div className="space-y-3">
           <div className="select-none">
-            <h3 className="text-sm font-extrabold text-white font-display">
+            <h3 className="text-sm font-extrabold text-text font-display">
               Link Vault
             </h3>
-            <p className="text-xs text-zinc-400">Search, filter, and inspect generated code parameters</p>
+            <p className="text-xs text-stone-400">Search, filter, and inspect generated code parameters</p>
           </div>
           
           <LinkTable 

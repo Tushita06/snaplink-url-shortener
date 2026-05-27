@@ -4,35 +4,39 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class', // Support toggling dark mode via class
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         background: {
-          DEFAULT: '#09090b', // Zinc 950 deep dark
-          card: '#121215',
-          input: '#1c1c21',
+          DEFAULT: '#FAFAF9',
+          card: '#FFFFFF',
+          input: '#FFFFFF',
         },
         primary: {
-          DEFAULT: '#8b5cf6', // Violet 500
-          hover: '#7c3aed', // Violet 600
-          glow: 'rgba(139, 92, 246, 0.15)',
+          DEFAULT: '#0F766E',
+          hover: '#115E59',
+          glow: 'rgba(15, 118, 110, 0.18)',
         },
         accent: {
-          cyan: '#06b6d4', // Cyan 500
-          pink: '#ec4899', // Pink 500
-          green: '#10b981', // Emerald 500
-          yellow: '#f59e0b', // Amber 500
-        }
+          DEFAULT: '#F59E0B',
+        },
+        text: {
+          DEFAULT: '#1C1917',
+          secondary: '#78716C',
+        },
+        border: {
+          DEFAULT: '#E7E5E4',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Outfit', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Source Serif 4"', 'Georgia', 'serif'],
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
-        'glass-hover': '0 8px 32px 0 rgba(139, 92, 246, 0.12)',
-        'glow-primary': '0 0 20px 2px rgba(139, 92, 246, 0.25)',
+        'glass': '0 8px 28px 0 rgba(28, 25, 23, 0.08)',
+        'glass-hover': '0 8px 28px 0 rgba(15, 118, 110, 0.12)',
+        'glow-primary': '0 0 18px 1px rgba(15, 118, 110, 0.18)',
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
