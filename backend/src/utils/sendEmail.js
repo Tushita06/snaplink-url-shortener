@@ -1,6 +1,5 @@
 const nodemailer = require('nodemailer');
 
-const sendEmail = async ({ to, subject, html }) => {
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
@@ -11,6 +10,7 @@ const sendEmail = async ({ to, subject, html }) => {
     },
   });
 
+  const sendEmail = async ({ to, subject, html }) => {
   await transporter.sendMail({
     from: `"SnapLink" <${process.env.EMAIL_USER}>`,
     to,
