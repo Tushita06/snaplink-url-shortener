@@ -66,11 +66,11 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                 <Activity className="w-5 h-5 text-violet-400" />
                 Link Metrics
               </h2>
-              <p className="text-xs text-stone-400 mt-0.5">Real-time click statistics</p>
+              <p className="text-xs text-text mt-0.5">Real-time click statistics</p>
             </div>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg hover:bg-stone-800 text-stone-400 hover:text-white transition-colors"
+              className="p-1.5 rounded-lg hover:bg-stone-800 text-text hover:text-white transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -81,14 +81,14 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
             {loading ? (
               <div className="h-full flex flex-col items-center justify-center space-y-3">
                 <div className="w-10 h-10 border-4 border-violet-500/20 border-t-violet-500 rounded-full animate-spin"></div>
-                <p className="text-sm text-stone-400 font-medium font-display animate-pulse uppercase tracking-wider">
+                <p className="text-sm text-text font-medium font-display animate-pulse uppercase tracking-wider">
                   Loading metrics...
                 </p>
               </div>
             ) : data ? (
               <>
                 {/* Link Summary Card */}
-                <div className="p-4 rounded-xl bg-stone-900/60 border border-stone-800/80 space-y-3">
+                <div className="p-4 rounded-xl bg-stone-300/60 border border-stone-800/80 space-y-3">
                   <span className="text-[10px] tracking-widest font-extrabold uppercase text-violet-400 font-display">
                     Destination URL
                   </span>
@@ -101,7 +101,7 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                     {data.url.title || data.url.originalUrl}
                     <ArrowUpRight className="w-4 h-4 flex-shrink-0" />
                   </a>
-                  <div className="flex items-center gap-2 text-xs text-stone-400 pt-1">
+                  <div className="flex items-center gap-2 text-xs text-text pt-1">
                     <Calendar className="w-3.5 h-3.5" />
                     <span>Created: {new Date(data.url.createdAt).toLocaleDateString()}</span>
                   </div>
@@ -109,7 +109,7 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
 
                 {/* Main Clicks Stats */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-stone-950/60 border border-stone-800 shadow-inner text-center">
+                  <div className="p-4 rounded-xl bg-stone-350/60 border border-stone-800 shadow-inner text-center">
                     <span className="text-2xl font-black text-white font-display">
                       {data.url.clicks}
                     </span>
@@ -117,7 +117,7 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                       Total Visits
                     </p>
                   </div>
-                  <div className="p-4 rounded-xl bg-stone-950/60 border border-stone-800 shadow-inner text-center">
+                  <div className="p-4 rounded-xl bg-stone-350/60 border border-stone-800 shadow-inner text-center">
                     <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${
                       data.url.expiresAt && new Date(data.url.expiresAt) <= new Date()
                         ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
@@ -136,7 +136,7 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                   <h3 className="text-xs font-extrabold tracking-wider uppercase text-stone-400 mb-3 font-display">
                     Timeline (Past 7 Days)
                   </h3>
-                  <div className="h-44 w-full bg-stone-950/40 border border-stone-800 p-2 rounded-xl">
+                  <div className="h-44 w-full bg-stone-400/40 border border-stone-800 p-2 rounded-xl">
                     {data.stats.totalClicks === 0 ? (
                       <div className="h-full flex items-center justify-center text-xs text-stone-600 font-medium">
                         No recent click events
@@ -256,9 +256,9 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                     Recent Clicks Log
                   </h3>
                   {data.stats.clickLogs.length === 0 ? (
-                    <p className="text-xs text-stone-600 italic">No click logs recorded yet</p>
+                    <p className="text-xs text-text italic">No click logs recorded yet</p>
                   ) : (
-                    <div className="flow-root bg-stone-950/30 border border-stone-800 p-2.5 rounded-xl max-h-60 overflow-y-auto scrollbar-thin">
+                    <div className="flow-root bg-stone-500/50 border border-stone-800 p-2.5 rounded-xl max-h-60 overflow-y-auto scrollbar-thin">
                       <ul className="-mb-8">
                         {data.stats.clickLogs.map((log, idx) => (
                           <li key={idx}>
@@ -274,14 +274,14 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                                 </div>
                                 <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
                                   <div>
-                                    <p className="text-xs font-semibold text-stone-300">
+                                    <p className="text-xs font-semibold text-text">
                                       {log.browser} ({log.os})
                                     </p>
-                                    <p className="text-[10px] text-stone-500 mt-0.5">
+                                    <p className="text-[10px] text-text mt-0.5">
                                       IP: {log.ip} &bull; Geolocation: {log.country}
                                     </p>
                                   </div>
-                                  <div className="text-right text-[10px] whitespace-nowrap text-stone-500 font-medium">
+                                  <div className="text-right text-[10px] whitespace-nowrap text-text font-medium">
                                     {new Date(log.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                                   </div>
                                 </div>
@@ -295,7 +295,7 @@ const AnalyticsDrawer = ({ isOpen, onClose, urlId }) => {
                 </div>
               </>
             ) : (
-              <p className="text-center text-xs text-stone-600 italic">Failed to retrieve data</p>
+              <p className="text-center text-xs text-text italic">Failed to retrieve data</p>
             )}
           </div>
         </div>
